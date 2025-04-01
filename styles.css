@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1f2e;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    background-color: #2a3142;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    padding: 1rem 0;
+}
+
+h1 {
+    color: #4a9eff;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    text-shadow: 0 0 10px rgba(74, 158, 255, 0.3);
+}
+
+#game-status {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #a8c7ff;
+}
+
+#mega-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    background-color: #4a9eff;
+    padding: 4px;
+    border-radius: 0;
+    margin-bottom: 1.5rem;
+    border: 2px solid #4a9eff;
+}
+
+.mini-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    background-color: #1a1f2e;
+    padding: 4px;
+    border-radius: 0;
+    border: 1px solid #4a9eff;
+}
+
+.mini-grid.active {
+    border: 2px solid #ff6b6b;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.3);
+}
+
+.cell {
+    width: 60px;
+    height: 60px;
+    background-color: #2a3142;
+    border: 1px solid #1a1f2e;
+    border-radius: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #a8c7ff;
+}
+
+.cell:hover:not(.invalid) {
+    background-color: #3a4156;
+    box-shadow: 0 0 10px rgba(74, 158, 255, 0.2);
+}
+
+.cell.x {
+    color: #4a9eff;
+}
+
+.cell.o {
+    color: #ff6b6b;
+}
+
+.cell.invalid {
+    background-color: #1a1f2e;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.mini-grid.invalid {
+    background-color: #1a1f2e;
+    opacity: 0.5;
+}
+
+#reset-button {
+    background-color: #4a9eff;
+    color: #1a1f2e;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+#reset-button:hover {
+    background-color: #3a8eef;
+    box-shadow: 0 0 10px rgba(74, 158, 255, 0.3);
+}
+
+.winner {
+    background-color: #1a3b5d;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    #game-status {
+        font-size: 1rem;
+    }
+    
+    .cell {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    #reset-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+} 
